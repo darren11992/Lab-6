@@ -1,5 +1,5 @@
 from items import *
-from map import rooms
+from map2 import rooms
 
 inventory = [item_id, item_laptop, item_money]
 

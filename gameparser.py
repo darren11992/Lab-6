@@ -27,10 +27,18 @@ def filter_words(words, skip_words):
     ['go', 'passage', 'south']
 
     """
+    no_bad_words=""
+    for word in words:
+        if not(word in skip_words):
+            no_bad_words= no_bad_words + word
+    return no_bad_words
+
+
     pass
 
 def remove_spaces(text):
-    text_no_space=text.strip()
+    text_striped=text.strip()
+    text_no_space=text_striped.split()
     return text_no_space
 
 def remove_punct(text):
@@ -80,9 +88,10 @@ def normalise_input(user_input):
 
     """
     # Remove punctuation and convert to lower case
-    no_punct = remove_punct(user_input).lower()
-    normal_input= remove_spaces(no_punct)
-    print(normal_input.split())
+    no_punct = remove_punct(user_input).lower() #Removes punctuation via remove_punct()
+    normal_input= remove_spaces(no_punct)       #removes spaces via remove_spaces()
+    #input_list= normal_input.split()         #split() manages to create the list
+    return normal_input
     #
     # COMPLETE ME!
     #
